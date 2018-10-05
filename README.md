@@ -7,3 +7,6 @@ To get this boilerplate up and running run ``yarn install`` in both the ``client
 
 ## Run
 To run the app move to the ``client`` directory and run ``yarn start``, you should now see "Hello World" at http://localhost/3000.
+
+## Author
+[Craig Melville](https://www.craigsportfolio.com/)
