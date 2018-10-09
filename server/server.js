@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const routes = require("./routes");
 
 const app = express();
@@ -14,8 +15,9 @@ app.use(routes);
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
-//commented out because it will throw an err until there are models
-//const db = require("./models");
+
+//Replace 'example with your database name'
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/example");
 
 app.listen(PORT, function() {
     console.log(`Listening on port ${PORT}`);
