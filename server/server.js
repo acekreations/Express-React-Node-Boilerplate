@@ -14,9 +14,9 @@ app.use(routes);
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
-//commented out because it throws err until there are models
+//commented out because it will throw an err until there are models
 //const db = require("./models");
 
-app.listen(PORT, function(){
+app.listen(PORT, function() {
     console.log(`Listening on port ${PORT}`);
-})
+});
