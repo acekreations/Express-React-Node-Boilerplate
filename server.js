@@ -10,11 +10,13 @@ app.use(express.json());
 
 app.use(routes);
 
-app.use(express.static("../client/public"));
 if (process.env.NODE_ENV === "production") {
-    console.log("env production, looking for build path");
-    app.use(express.static(path.join(__dirname, "client", "build")));
+    app.use(
+        express.static(path.join(__dirname, "client", "build", "index.html"))
+    );
 }
+
+app.use(express.static(path.join(__dirname, "client", "public")));
 
 app.listen(PORT, function() {
     console.log(`Listening on port ${PORT}`);
