@@ -12,6 +12,7 @@ app.use(routes);
 
 app.use(express.static("../client/public"));
 if (process.env.NODE_ENV === "production") {
+    console.log("env production, looking for build path");
     app.use(express.static(path.join(__dirname, "client", "build")));
 }
 
